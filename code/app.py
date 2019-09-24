@@ -6,7 +6,7 @@ from flask import Flask, request, jsonify
 def create_app():
 
     app = Flask(__name__)
-    model = joblib.load('nba_model')
+    model = joblib.load('code/nba_model')
 
     @app.route('/api', methods=['POST'])
     def predict():
