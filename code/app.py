@@ -2,12 +2,11 @@ import joblib
 import numpy as np
 from flask import Flask, request, jsonify
 
-model = joblib.load('nba_model')
-
 
 def create_app():
 
     app = Flask(__name__)
+    model = joblib.load('nba_model')
 
     @app.route('/api', methods=['POST'])
     def predict():
